@@ -1,0 +1,90 @@
+\documentclass[dvipdfmx,uplatex,b5paper,9pt]{jsreport}
+%%amsthm package for theorem environments
+\usepackage{amsthm}
+%hyperref package
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{%
+bookmarksnumbered=true,%
+colorlinks=true,%
+pdftitle={ConformalFieldTheory},%
+pdfauthor={}
+}
+%%amsfonts package for mathematical fonts
+\usepackage{amsfonts}
+%ascmac package for itembox
+\usepackage{ascmac}
+%amsmath package for mathematical functions
+\usepackage{amsmath}
+%cleveref package
+\usepackage{cleveref}
+%mathtools package
+\usepackage{mathtools}
+\mathtoolsset{showmanualtags}
+\usepackage{autonum}
+%braket package for Dirac's braket expression
+\usepackage{braket}
+%bm package for vector expression
+\usepackage{bm}
+%for toprule etc
+\usepackage{booktabs}
+%
+\usepackage{here}
+\usepackage{mleftright}
+%
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usepackage{pgfplots}
+%
+\usepackage{siunitx}
+\crefname{equation}{Equation}{Equations}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Def.}[section]
+\crefname{defn}{Definition}{Definitions}
+
+\theoremstyle{definition}
+\newtheorem{prop}{Prop.}[section]
+\crefname{prop}{Proposition}{Propositions}
+
+\theoremstyle{definition}
+\newtheorem{cor}{Cor.}[section]
+\crefname{cor}{Corollary}{Corollaries}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{lem}{Lemma}[section]
+\crefname{lem}{Lemma}{Lemmas}
+
+\theoremstyle{definition}
+\newtheorem{eg}{e.g.}[section]
+
+\theoremstyle{definition}
+\newtheorem{prob}{problem}[section]
+
+\theoremstyle{definition}
+\newtheorem{post}{Postulate}[section]
+
+\theoremstyle{definition}
+\newtheorem{fact}{Fact}[section]
+\crefname{fact}{Fact}{Facts}
+\crefname{equation}{Equation}{Equations}
+
+%\abs & \norm
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+\title{Conformal Field Theory}
+\author{naok1} %適宜自分の名前を書く
+\begin{document}
+\maketitle
+\tableofcontents
+\input{src/conformal-transformation.tex}
+\chapter{場と共形不変性}
+\section{場の共形変換}
+\(d\)次元時空における\(N\)成分場\(\phi^{a}(x)\)の共形変換を考える．
+\bibliography{bibliography}
+\bibliographystyle{junsrt}
+\end{document}

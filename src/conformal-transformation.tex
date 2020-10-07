@@ -1,0 +1,598 @@
+\chapter{共形変換と共形代数}
+\section{直交変換}
+\(d\)次元ユークリッド空間\(\mathbb{R}^{d}\)を考える．\(\mathbb{R}^{d}\)
+は平坦な計量\(g_{\mu\nu}=\delta_{\mu\nu}\)を備えている．座標変換
+\(x\longrightarrow{}x'\)に対して，計量が作る内積は不変であり，
+\begin{align}
+	dx^{\mu}g_{\mu\nu}dx^{\nu}=dx'^{\mu}g'_{\mu\nu}dx'^{\nu}
+\end{align}
+が成り立つ．ここで，
+\begin{align}
+	dx^{\mu}=\frac{\partial{}x^{\mu}}{\partial{}x'^{\nu}}dx'^{\nu}
+\end{align}
+を用いれば，
+\begin{align}
+	dx'^{\mu}g'_{\mu\nu}dx'^{\nu}=\frac{\partial{}x^{\rho}}{\partial{}x'^{\mu}}dx'^{\rho}g_{\rho\sigma}\frac{\partial{}x^{\sigma}}{\partial{}x'^{\nu}}dx'^{\nu}.
+\end{align}
+従って計量は
+\begin{align}
+	g_{\mu\nu}\longrightarrow{}g'_{\mu\nu}=\frac{\partial{}x^{\rho}}{\partial{}x'^{\mu}}\frac{\partial{}x^{\sigma}}{\partial{}x'^{\nu}}g_{\rho\sigma}
+\end{align}
+という変換を受ける．
+\begin{defn}[直交変換]
+	座標の線型変換，
+	\begin{align}
+		x^{\mu}\longrightarrow{}\Lambda^{\mu}_{\ \nu}x^{\nu}
+	\end{align}
+	であってユークリッド計量を変化させないものを直交変換という．
+\end{defn}
+直交変換では
+\begin{align}
+	g_{\mu\nu}\Lambda^{\mu}_{\ \rho}\Lambda^{\nu}_{\ \sigma}=g_{\rho\sigma}
+\end{align}
+が成り立つ．
+\begin{prop}
+	直交変換ではユークリッド内積が不変．
+\end{prop}
+\section{共形変換}
+\begin{defn}[共形変換]
+	座標変換\(x\longrightarrow{}x'\)について，計量が正数倍だけ変換される，すなわち
+	\begin{align}
+		g_{\mu\nu}\longrightarrow{}\Omega^{2}(x)g_{\mu\nu}
+	\end{align}
+	となる変換を共形変換という．ここで\(\Omega(x)\)をスケール因子という．
+\end{defn}
+\begin{prop}
+	共形変換では接ベクトルの交わる角度は変わらない．
+\end{prop}
+\begin{proof}
+	点\(x\)において，接ベクトル\(a\)，\(b\)を考える．\(a\)，\(b\)のなす余弦は
+	\begin{align}
+		\cos\theta=\frac{g_{\mu\nu}a^{\mu}b^{\nu}}{\sqrt{g_{\mu\mu}g_{\nu\nu}a^{\mu}a^{\mu}b^{\nu}b^{\nu}}}
+	\end{align}
+	で定義されるが，共形変換\(g_{\mu\nu}\longrightarrow{}\Omega^{2}(x)g_{\mu\nu}\)
+	に対して，
+	\begin{align}
+		\cos\theta\longrightarrow{}\frac{\Omega^{2}(x)g_{\mu\nu}a^{\mu}b^{\nu}}{\Omega^{2}(x)\sqrt{g_{\mu\mu}g_{\nu\nu}a^{\mu}a^{\mu}b^{\nu}b^{\nu}}}=\cos\theta
+	\end{align}
+	となりこれは不変．従って\(a\)，\(b\)のなす角度も不変．
+\end{proof}
+\begin{prop}
+	共形変換について，接ベクトルの大きさはスケール因子を\(\Omega(x)\)として
+	\(\abs{\Omega(x)}\)倍だけ変化する．
+\end{prop}
+\begin{proof}
+	\(a\)を点\(x\)における接ベクトルとする．このとき，接ベクトルの
+	ノルムの二乗は
+	\begin{align}
+		g_{\mu\mu}a^{\mu}a^{\mu}\longrightarrow{}\Omega^{2}(x)a^{\mu}a^{\mu}
+	\end{align}
+	と変化する．従って\(a\)の大きさは\(\abs{\Omega(x)}\)倍だけ変化する．
+\end{proof}
+\begin{prop}[無限小座標変換]\label{prop::transformation-rule-for-metric}
+	無限小座標変換，
+	\begin{align}
+		x^{\mu}\longrightarrow{}x'^{\mu}=x^{\mu}-\varepsilon^{\mu}(x)
+	\end{align}
+	を考える．このとき，計量は
+	\begin{align}
+		g_{\mu\nu}\longrightarrow{}g'_{\mu\nu}=g_{\mu\nu}+\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\nu}\varepsilon_{\mu}(x).
+	\end{align}
+	という変換を受ける．
+\end{prop}
+\begin{proof}
+	\begin{align}
+		\frac{\partial{}x^{\mu}}{\partial{}x'^{\nu}}=\delta^{\mu}_{\ \nu}+\partial_{\nu}\varepsilon^{\mu}(x)
+	\end{align}
+	ここで，
+	\begin{align}
+		\frac{\partial\varepsilon^{\mu}(x)}{\partial{}x'^{\nu}} & =\frac{\partial\varepsilon^{\mu}(x)}{\partial{}x^{\rho}}\frac{\partial{}x^{\rho}}{\partial{}x'^{\nu}}                                                                                                                                   \\
+		                                                        & =\frac{\partial\varepsilon^{\mu}(x)}{\partial{}x^{\nu}}+\frac{\partial\varepsilon^{\mu}(x)}{\partial{}x^{\rho}}\frac{\partial{}\varepsilon^{\rho}(x)}{\partial{}x'^{\nu}}\simeq{}\frac{\partial\varepsilon^{\mu}(x)}{\partial{}x^{\nu}}
+	\end{align}
+	を用いた．従って，計量の変換は
+	\begin{align}
+		g'_{\mu\nu} & =\frac{\partial{}x^{\rho}}{\partial{}x'^{\mu}}\frac{\partial{}x^{\sigma}}{\partial{}x'^{\nu}}g_{\rho\sigma}                               \\
+		            & =(\delta^{\rho}_{\ \mu}+\partial_{\mu}\varepsilon^{\rho}(x))(\delta^{\sigma}_{\ \nu}+\partial_{\nu}\varepsilon^{\sigma}(x))g_{\rho\sigma} \\
+		            & =g_{\mu\nu}+\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\nu}\varepsilon_{\mu}(x).
+	\end{align}
+	となる．
+\end{proof}
+\begin{prop}[共形Killing方程式]
+	無限小座標変換，
+	\begin{align}
+		x^{\mu}\longrightarrow{}x'^{\mu}=x^{\mu}-\varepsilon^{\mu}(x)
+	\end{align}
+	を考える．このとき，この無限小座標変換が共形変換になるためにはある無限小スケール因子\(\omega(x)\)が存在して
+	\begin{align}\label{eq::conformal-Killing-equation}
+		\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\nu}\varepsilon_{\mu}(x)=\omega(x)g_{\mu\nu}.
+	\end{align}
+	となることが必要十分．これを共形Killing方程式 (conformal Killing equation) という．
+\end{prop}
+\begin{proof}
+	無限小変換の計量は\cref{prop::transformation-rule-for-metric}より，
+	\begin{align}
+		g_{\mu\nu}\longrightarrow{}g'_{\mu\nu}=g_{\mu\nu}+\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\nu}\varepsilon_{\mu}(x).
+	\end{align}
+	という変換になる．これが共形変換になるためにはあるスケール因子\(\Omega(x)\)を用いて
+	\begin{align}
+		g_{\mu\nu}+\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\nu}\varepsilon_{\mu}(x)=\Omega^{2}(x)g_{\mu\nu}
+	\end{align}
+	が成り立つことが必要十分．今，ある無限小関数\(\omega(x)\)を
+	\begin{align}
+		\Omega(x)=1+\frac{\omega(x)}{2}
+	\end{align}
+	で定義すると，\(\Omega^{2}(x)\simeq{}1+\omega(x)\)となるから，
+	\begin{align}
+		\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\nu}\varepsilon_{\mu}(x)=\omega(x)g_{\mu\nu}.
+	\end{align}
+\end{proof}
+\begin{prop}
+	\(\varepsilon(x)\)と\(\omega(x)\)は
+	\begin{align}\label{eq::infinitesimal-scale-factor-and-conformal-killing-vector}
+		\partial_{\mu}\varepsilon^{\mu}(x)=\frac{d}{2}\omega(x),\quad{}\omega(x)=\frac{2}{d}\partial_{\mu}\varepsilon^{\mu}(x).
+	\end{align}
+	の関係がある．従って共形Killing方程式は
+	\begin{align}
+		\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\nu}\varepsilon_{\mu}(x)=\frac{2}{d}g_{\mu\nu}\partial_{\rho}\varepsilon_{\rho}(x).
+	\end{align}
+	これを満たす\(\varepsilon^{\mu}(x)\)を共形Killingベクトル (conformal Killing vector) という．
+\end{prop}
+\begin{proof}
+	\cref{eq::conformal-Killing-equation}の両辺に\(g^{\mu\nu}\)をかけると，
+	\begin{align}
+		\partial_{\mu}\varepsilon^{\mu}(x)+\partial_{\mu}\varepsilon^{\mu}(x)=d\omega(x).
+	\end{align}
+	従って，\(\omega(x)\)は
+	\begin{align}
+		\partial_{\mu}\varepsilon^{\mu}(x)=\frac{d}{2}\omega(x),\quad{}\omega(x)=\frac{2}{d}\partial_{\mu}\varepsilon^{\mu}(x).
+	\end{align}
+	で表される．
+\end{proof}
+共形Killingベクトルの作る共形変換は，
+\begin{align}
+	g_{\mu\nu}\longrightarrow\mleft(1+\frac{2}{d}\partial_{\mu}\varepsilon^{\mu}(x)\mright)g_{\mu\nu}
+\end{align}
+となる．
+\begin{prop}\label{prop::conformal-Killing-vector-and-omega}
+	共形Killingベクトル\(\varepsilon^{\mu}(x)\)について，
+	\begin{align}
+		\partial^{\mu}\partial_{\mu}\varepsilon_{\rho}(x)=\frac{-d+2}{2}\partial_{\rho}\omega(x).
+	\end{align}
+\end{prop}
+\begin{proof}
+	\cref{eq::conformal-Killing-equation}の両辺に左から偏微分演算子\(\partial_{\rho}\)
+	を作用させると，
+	\begin{align}
+		\partial_{\rho}\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\rho}\partial_{\nu}\varepsilon_{\mu}(x)=\partial_{\rho}\omega(x)g_{\mu\nu}.
+	\end{align}
+	ここで，\(\mu\)，\(\nu\)，\(\rho\)について巡回させると，
+	\begin{align}
+		\partial_{\rho}\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\rho}\partial_{\nu}\varepsilon_{\mu}(x) & =\partial_{\rho}\omega(x)g_{\mu\nu}, \\
+		\partial_{\mu}\partial_{\nu}\varepsilon_{\rho}(x)+\partial_{\mu}\partial_{\rho}\varepsilon_{\nu}(x) & =\partial_{\mu}\omega(x)g_{\nu\rho}, \\
+		\partial_{\nu}\partial_{\rho}\varepsilon_{\mu}(x)+\partial_{\nu}\partial_{\mu}\varepsilon_{\rho}(x) & =\partial_{\nu}\omega(x)g_{\rho\mu}.
+	\end{align}
+	下2つを足して上1つを引くと，
+	\begin{align}\label{eq::conformal-formula-1}
+		2\partial_{\mu}\partial_{\nu}\varepsilon_{\rho}(x)=-\partial_{\rho}\omega(x)g_{\mu\nu}+\partial_{\mu}\omega(x)g_{\nu\rho}+\partial_{\nu}\omega(x)g_{\rho\mu}
+	\end{align}
+	この両辺に\(g^{\mu\nu}\)をかけると，
+	\begin{align}
+		2\partial^{\mu}\partial_{\mu}\varepsilon_{\rho}(x) & =-d\partial_{\rho}\omega(x)+\partial_{\rho}\omega(x)+\partial_{\rho}\omega(x) \\
+		                                                   & =(-d+2)\partial_{\rho}\omega(x).
+	\end{align}
+	従って，
+	\begin{align}
+		\partial^{\mu}\partial_{\mu}\varepsilon_{\rho}(x)=\frac{-d+2}{2}\partial_{\rho}\omega(x).
+	\end{align}
+\end{proof}
+\begin{prop}
+	\begin{align}\label{eq::infinitesimal-scale-factor-d-2}
+		\mleft[(d-2)\partial_{\mu}\partial_{\nu}+\partial^{\rho}\partial_{\rho}g_{\mu\nu}\mright]\omega(x)=0.
+	\end{align}
+	この両辺に\(g^{\mu\nu}\)をかけると，
+	\begin{align}\label{eq::infinitesimal-scale-factor-d-1}
+		(d-1)\partial^{\mu}\partial_{\mu}\omega(x)=0.
+	\end{align}
+\end{prop}
+\begin{proof}
+	共形Killing方程式\cref{eq::conformal-Killing-equation}の両辺に
+	\(\partial^{\rho}\partial_{\rho}\)をかけると，\cref{prop::conformal-Killing-vector-and-omega}より，
+	\begin{align}
+		\frac{1}{2}\mleft[(-d+2)\partial_{\mu}\partial_{\nu}\omega(x)+(-d+2)\partial_{\nu}\partial_{\mu}\omega(x)\mright]=\partial^{\rho}\partial_{\rho}\omega(x)g_{\mu\nu}.
+	\end{align}
+	従って，
+	\begin{align}
+		\mleft[(d-2)\partial_{\mu}\partial_{\nu}+\partial^{\rho}\partial_{\rho}g_{\mu\nu}\mright]\omega(x)=0.
+	\end{align}
+\end{proof}
+\begin{enumerate}
+	\item \(d=1\)のとき．\(\omega(x)\)は無条件に\cref{eq::infinitesimal-scale-factor-d-1}
+	      を満たす．
+	\item \(d\geq{}2\)のときは
+	      \begin{align}
+		      \partial^{\mu}\partial_{\mu}\omega(x)=0
+	      \end{align}
+	      を満たさなければならない．
+	\item \(d\geq{}3\)のとき．
+	      \begin{align}
+		      \partial^{\mu}\partial_{\mu}\omega(x) & =0, \\
+		      \partial_{\mu}\partial_{\nu}\omega(x) & =0
+	      \end{align}
+	      を満たす必要がある．従って\(3\)次元以上の無限小スケール因子は
+	      \(x\)について高々線型で，
+	      \begin{align}
+		      \omega(x)=A+B_{\mu}x^{\mu}
+	      \end{align}
+	      と書ける．
+\end{enumerate}
+\begin{prop}
+	\(d\geq{}3\)次元空間の共形Killingベクトル\(\varepsilon_{\mu}(x)\)は
+	\begin{align}
+		\varepsilon_{\mu}(x)=a_{\mu}+b_{\mu\nu}x^{\nu}+c_{\mu\nu\rho}x^{\nu}x^{\rho}.
+	\end{align}
+	と表せる．また，\(\varepsilon_{\mu}(x)\)に対応する無限小スケール因子は，
+	\begin{align}
+		\omega(x)=\frac{2}{d}\left(b^{\mu}_{\ \mu}+2c^{\mu}_{\ \mu\rho}x^{\rho}\right).
+	\end{align}
+\end{prop}
+\begin{proof}
+	\(d\geq{}3\)次元空間を考えて，\cref{eq::conformal-formula-1}に
+	\begin{align}
+		\omega(x)=A+B_{\mu}x^{\mu}
+	\end{align}
+	を代入すると，
+	\begin{align}
+		2\partial_{\mu}\partial_{\nu}\varepsilon_{\rho}(x) & =-(\partial_{\rho}B_{\lambda}x^{\lambda})g_{\mu\nu}+\partial_{\mu}(B_{\lambda}x^{\lambda})g_{\nu\rho}+\partial_{\nu}(B_{\lambda}x^{\lambda})g_{\rho\mu} \\
+		                                                   & =-B_{\rho}g_{\mu\nu}+B_{\mu}g_{\nu\rho}+B_{\nu}g_{\rho\mu}
+	\end{align}
+	従って\(\varepsilon_{\mu}(x)\)は\(x^{\mu}\)に関して高々2次で，
+	\begin{align}
+		\varepsilon_{\mu}(x)=a_{\mu}+b_{\mu\nu}x^{\nu}+c_{\mu\nu\rho}x^{\nu}x^{\rho}.
+	\end{align}
+	ただし，\(c_{\mu\nu\rho}\)は最後の2つの添字に関して対称で，
+	\(c_{\mu\nu\rho}=c_{\mu\rho\nu}\)．これを
+	\cref{eq::infinitesimal-scale-factor-and-conformal-killing-vector}に代入すると，
+	\begin{align}
+		\omega(x) & =\frac{2}{d}\partial_{\mu}\left(a^{\mu}+b^{\mu}{\ \nu}x^{\nu}+c^{\mu}_{\ \nu\rho}x^{\nu}x^{\rho}\right)                                                         \\
+		          & =\frac{2}{d}\left(b^{\mu}_{\ \nu}\partial_{\mu}x^{\nu}+c^{\mu}_{\ \nu\rho}\partial_{\mu}(x^{\nu}x^{\rho})\right)                                                \\
+		          & =\frac{2}{d}\left(b^{\mu}_{\ \nu}\delta^{\nu}_{\ \mu}+c^{\mu}_{\ \nu\rho}(\delta^{\nu}_{\ \mu}x^{\rho}+\delta^{\rho}_{\ \mu}x^{\nu})\right)                     \\\
+		          & =\frac{2}{d}\left(b^{\mu}_{\ \mu}+(c^{\mu}_{\ \mu\rho}x^{\rho}+c^{\mu}_{\ \nu\mu}x^{\nu})\right)                                                                \\
+		          & =\frac{2}{d}\left(b^{\mu}_{\ \mu}+(c^{\mu}_{\ \mu\rho}+c^{\mu}_{\ \rho\mu})x^{\rho}\right)=\frac{2}{d}\left(b^{\mu}_{\ \mu}+2c^{\mu}_{\ \mu\rho}x^{\rho}\right)
+	\end{align}
+\end{proof}
+\begin{prop}
+	次が成り立つ．
+	\begin{align}
+		b_{\nu\mu}+b_{\mu\nu} & =Ag_{\mu\nu},                                                                       \\
+		c_{\mu\nu\rho}        & =\frac{1}{4}\left(-B_{\mu}g_{\nu\rho}+B_{\nu}g_{\rho\mu}+B_{\rho}g_{\mu\nu}\right).
+	\end{align}
+	すなわち，\(b_{\mu\nu}\)を対称部分と反対称部分
+	\begin{align}
+		b^{S}_{\mu\nu}=\frac{b_{\mu\nu}+b_{\nu\mu}}{2},\quad{}b^{A}_{\mu\nu}=\frac{b_{\mu\nu}-b_{\nu\mu}}{2}
+	\end{align}
+	に分けたとき，
+	\begin{align}
+		b^{S}_{\mu\nu}=\frac{A}{2}g_{\mu\nu}
+	\end{align}
+	となり，これはスケール変換
+	\begin{align}
+		{b^{S}}^{\mu}_{\ \nu}=\frac{A}{2}
+	\end{align}
+	を表す．また，\(c_{\mu\nu\rho}\)に関する変換は
+	\begin{align}
+		\varepsilon_{\mu}=\frac{1}{4}\left(-B_{\mu}x^{2}+2x_{\mu}B_{\nu}x^{\nu}\right)
+	\end{align}
+\end{prop}
+\begin{proof}
+	\cref{eq::conformal-formula-1}に
+	\begin{align}
+		\varepsilon_{\mu}(x)=a_{\mu}+b_{\mu\nu}x^{\nu}+c_{\mu\nu\rho}x^{\nu}x^{\rho}.
+	\end{align}
+	を代入すると，
+	\begin{align}
+		2(c_{\rho\mu\nu}+c_{\rho\nu\mu})=-B_{\rho}g_{\mu\nu}+B_{\mu}g_{\nu\rho}+B_{\nu}g_{\rho\mu}
+	\end{align}
+	\(c_{\rho\mu\nu}=c_{\rho\nu\mu}\)を用いれば，
+	\begin{align}
+		c_{\mu\nu\rho}=\frac{1}{4}\left(-B_{\mu}g_{\nu\rho}+B_{\nu}g_{\rho\mu}+B_{\rho}g_{\mu\nu}\right)
+	\end{align}
+	また，共形Killing方程式\cref{eq::conformal-Killing-equation}に\(\varepsilon_{\mu}\)を
+	代入すると，
+	\begin{align}
+		b_{\nu\mu}+b_{\mu\nu}+2(c_{\mu\nu\rho}+c_{\nu\mu\rho})x^{\rho}=(A+B_{\rho}x^{\rho})g_{\mu\nu}
+	\end{align}
+	ここで，
+	\begin{align}
+		c_{\mu\nu\rho}+c_{\nu\mu\rho} & =\frac{1}{4}\left(-B_{\mu}g_{\nu\rho}-B_{\nu}g_{\mu\rho}+B_{\nu}g_{\rho\mu}+B_{\mu}g_{\rho\nu}+B_{\rho}g_{\mu\nu}+B_{\rho}g_{\nu\mu}\right) \\
+		                              & =\frac{1}{2}B_{\rho}g_{\mu\nu}
+	\end{align}
+	であるから，
+	\begin{align}
+		b_{\nu\mu}+b_{\mu\nu}=Ag_{\mu\nu}.
+	\end{align}
+\end{proof}
+\(d\geq{}3\)次元の共形変換は以下のように分類される．
+\begin{enumerate}
+	\item 無限小並進変換
+	      \begin{align}
+		      \varepsilon^{\mu}=a^{\mu}.
+	      \end{align}
+	\item 無限小回転変換
+	      \begin{align}
+		      \varepsilon^{\mu}={b^{A}}^{\mu}_{\ \nu}x^{\nu},\quad{}{b^{A}}^{\mu}_{\ \nu}+{b^{A}}^{\nu}_{\ \mu}=0.
+	      \end{align}
+	\item スケール変換
+	      \begin{align}
+		      \varepsilon^{\mu}=\frac{A}{2}x^{\mu}.
+	      \end{align}
+	\item 特殊共形変換 (special conformal transformation)
+	      \begin{align}
+		      \varepsilon_{\mu}=\frac{1}{4}\left(-B_{\mu}x^{2}+2x_{\mu}B_{\nu}x^{\nu}\right)
+	      \end{align}
+\end{enumerate}
+\chapter{\(d\)次元共形代数}
+\section{Lorentz代数}
+~\cite{adhara_blog_c31}を参考にした．Minkowski計量を\(\eta\)
+としたときLorentz変換は
+\begin{align}
+	\Lambda^{T}\eta\Lambda=\eta
+\end{align}
+を満たす線型変換である．
+\begin{prop}[Lorentz代数]
+	Lorentz変換のLie代数は
+	\begin{align}
+		\hat{M}_{\mu\nu}\coloneqq{}-ix_{\mu}\frac{\partial}{\partial{}x^{\nu}}+ix_{\nu}\frac{\partial}{\partial{}x^{\mu}}
+	\end{align}
+\end{prop}
+\begin{proof}
+	微小Lorentz変換を
+	\begin{align}
+		\Lambda=1+\varepsilon\simeq{}e^{\varepsilon}
+	\end{align}
+	で表した時，\(\Lambda^{T}\eta\Lambda=\eta\)に代入すると，
+	\begin{align}
+		(1+\varepsilon^{T})\eta(1+\varepsilon)=\eta.
+	\end{align}
+	従って，
+	\begin{align}
+		(\eta\varepsilon)^{T}+\eta\varepsilon=0.
+	\end{align}
+	従って\(\varepsilon_{\mu\nu}=\eta_{\mu\rho}\varepsilon^{\rho}_{\ \nu}\)は反対称テンソル．
+	また，\(\varepsilon^{\mu\nu}\)も反対称テンソル．ここで，反対称な演算子
+	\begin{align}
+		\hat{M}_{\mu\nu}\coloneqq{}-ix_{\mu}\frac{\partial}{\partial{}x^{\nu}}+ix_{\nu}\frac{\partial}{\partial{}x^{\mu}}
+	\end{align}
+	を考えると，これは
+	\begin{align}
+		\hat{M}_{\mu\nu}x^{\rho} & =i(-x_{\mu}\delta_{\nu\rho}+x_{\nu}\delta_{\mu\rho}).
+	\end{align}
+	今，微小変換部分
+	\begin{align}
+		\hat{\varepsilon}:x^{\mu}\mapsto{}(1+\varepsilon)x^{\mu}-x^{\mu}
+	\end{align}
+	の\(x^{\nu}\)への作用を考えると，
+	\begin{align}
+		\hat{\varepsilon}x^{\nu} & =\varepsilon^{\mu}_{\ \rho}x^{\rho}\delta^{\nu}_{\rho}                                     \\
+		                         & =\left(\varepsilon^{\mu}_{\ \rho}x^{\rho}\frac{\partial}{\partial{}x^{\rho}}\right)x^{\nu} \\
+	\end{align}
+	従って，
+	\begin{align}
+		\hat{\varepsilon} & =\left(\varepsilon^{\mu}_{\ \nu}x^{\nu}\frac{\partial}{\partial{}x^{\nu}}\right)=\left(\varepsilon^{\mu\nu}x_{\nu}\frac{\partial}{\partial{}x^{\nu}}\right) \\
+		                  & =\frac{1}{2}\left(\varepsilon^{\mu\nu}x_{\nu}\frac{\partial}{\partial{}x^{\nu}}-\varepsilon^{\mu\nu}x_{\mu}\frac{\partial}{\partial{}x^{\mu}}\right)        \\
+		                  & =-\frac{i}{2}\varepsilon^{\mu\nu}\left(-ix_{\mu}\frac{\partial}{\partial{}x^{\mu}}+ix_{\nu}\frac{\partial}{\partial{}x^{\nu}}\right)                        \\
+		                  & =-\frac{i}{2}\varepsilon^{\mu\nu}\hat{M}_{\mu\nu}.
+	\end{align}
+\end{proof}
+\begin{prop}[Lorentz代数]
+	Lorentz変換のLie代数はLorentz代数
+	\begin{align}
+		[\hat{M}_{\mu\nu},\hat{M}_{\rho\sigma}]=i\eta_{\mu\rho}\hat{M}_{\nu\sigma}-i\eta_{\nu\rho}\hat{M}_{\mu\sigma}-i\eta_{\mu\sigma}\hat{M}_{\nu\rho}+i\eta_{\nu\sigma}\hat{M}_{\mu\rho}
+	\end{align}
+	を満たす．
+\end{prop}
+\section{Poincar\'{e}代数}
+\begin{prop}
+	無限小並進変換のLie代数は
+	\begin{align}
+		\hat{P}_{\mu}\coloneqq{}\frac{\partial}{\partial{}x^{\mu}}.
+	\end{align}
+\end{prop}
+\begin{proof}
+	無限小並進変換
+	\begin{align}
+		x^{\mu}\longrightarrow{}x^{\mu}+\varepsilon^{\mu}
+	\end{align}
+	を考える．微小変換部分
+	\begin{align}
+		\hat{\varepsilon}:x^{\mu}\longrightarrow{}(x^{\mu}+\varepsilon^{\mu})-x^{\mu}
+	\end{align}
+	の\(x^{\mu}\)への作用を考えると，
+	\begin{align}
+		\hat{\varepsilon}x^{\nu} & =\varepsilon^{\mu}\delta^{\mu}_{\ \nu}                                   \\
+		                         & =\left(\varepsilon^{\mu}\frac{\partial}{\partial{}x^{\mu}}\right)x^{\nu}
+	\end{align}
+	従って，
+	\begin{align}
+		\hat{\varepsilon}=\varepsilon^{\mu}\frac{\partial}{\partial{}x^{\mu}}
+	\end{align}
+	で表せる．従って，
+	\begin{align}
+		\hat{P}_{\mu}\coloneqq{}i\frac{\partial}{\partial{}x^{\mu}}
+	\end{align}
+	とすると，
+	\begin{align}
+		\hat{\varepsilon}=-i\varepsilon^{\mu}\hat{P}_{\mu}
+	\end{align}
+\end{proof}
+\begin{prop}
+	無限小並進変換のLie代数の交換関係は，
+	\begin{align}
+		[\hat{P}_{\mu},\hat{P}_{\nu}]=0.
+	\end{align}
+\end{prop}
+\begin{proof}
+
+\end{proof}
+\begin{prop}[Poincar\'{e}代数の交換関係]
+	\begin{align}
+		[\hat{M}_{\mu\nu},\hat{P}_{\rho}]=i\eta_{\mu\rho}\hat{P}_{\nu}-i\eta_{\nu\rho}\hat{P}_{\mu}
+	\end{align}
+\end{prop}
+\begin{proof}
+
+\end{proof}
+\section{スケール演算子}
+\begin{prop}[スケール変換]
+	\(1+\varepsilon\)倍するスケール変換 (scale transformation)
+	\begin{align}
+		x^{\mu}\longrightarrow{}(1+\varepsilon)x^{\mu}
+	\end{align}
+	のLie代数は
+	\begin{align}
+		\hat{D}\coloneqq{}ix^{\mu}\frac{\partial}{\partial{}x^{\mu}}.
+	\end{align}
+\end{prop}
+\begin{proof}
+	スケール変換は
+	\begin{align}
+		x^{\mu}\longrightarrow{}x^{\mu}+\varepsilon{}x^{\mu}
+	\end{align}
+	で，微小変換部分
+	\begin{align}
+		\hat{\varepsilon}:x^{\mu}\mapsto{}(x^{\mu}+\varepsilon{}x^{\mu})-x^{\mu}
+	\end{align}
+	の\(x^{\nu}\)への作用を考えると，
+	\begin{align}
+		\hat{\varepsilon}x^{\nu} & =\varepsilon{}x^{\mu}\delta^{\nu}_{\mu}                                      \\
+		                         & =\left(\varepsilon{}x^{\mu}\frac{\partial}{\partial{}x^{\mu}}\right)x^{\nu}.
+	\end{align}
+	従って，
+	\begin{align}
+		\hat{D}\coloneqq{}ix^{\mu}\frac{\partial}{\partial{}x^{\mu}}
+	\end{align}
+	を定義すると，微小スケール変換は
+	\begin{align}
+		\hat{\varepsilon}=-i\varepsilon{}\hat{D}
+	\end{align}
+	で表される．
+\end{proof}
+\section{反転変換}
+\begin{defn}[反転変換]
+	座標変換
+	\begin{align}
+		\hat{I}:x^{\mu}\longrightarrow{}\frac{x^{\mu}}{x^{2}}
+	\end{align}
+	を反転変換という．なお，反転変換は原点に対して定義されない．
+\end{defn}
+\begin{prop}
+	\begin{align}
+		\hat{I}^{2}=1.
+	\end{align}
+\end{prop}
+\begin{proof}
+	\begin{align}
+		\hat{I}^{2}x^{\mu} & =\hat{I}\frac{x^{\mu}}{x^{2}}        \\
+		                   & =\frac{x^{2}}{x^{2}}x^{\mu}=x^{\mu}.
+	\end{align}
+\end{proof}
+\begin{lem}
+	\begin{align}
+		\frac{\partial}{\partial{}x^{\nu}}\frac{x^{\mu}}{x^{2}}=\frac{1}{x^{2}}\left(\delta^{\mu}_{\ \nu}+\frac{2x^{\mu}x_{\nu}}{x^{2}}\right)
+	\end{align}
+\end{lem}
+\begin{proof}
+	\begin{align}
+		\frac{\partial}{\partial{}x^{\nu}}\frac{x^{\mu}}{x^{2}} & =\frac{\partial{}x^{\mu}}{\partial{}x^{\nu}}\frac{1}{x^{2}}+x^{\mu}\frac{\partial}{\partial{}x^{\nu}}\frac{1}{x^{2}} \\
+		                                                        & =\delta^{\mu}_{\ \nu}\frac{1}{x^{2}}-x^{\mu}\frac{2x_{\nu}}{(x^{2})^{2}}                                             \\
+		                                                        & =\frac{1}{x^{2}}\left(\delta^{\mu}_{\ \nu}-\frac{2x^{\mu}x_{\nu}}{x^{2}}\right)
+	\end{align}
+\end{proof}
+\begin{prop}
+	\begin{align}
+		\hat{I}\hat{D}\hat{I}=-\hat{D}.
+	\end{align}
+\end{prop}
+\begin{proof}
+	まず，
+	\begin{align}
+		\hat{D}\hat{I}f(x) & =ix^{\mu}\frac{\partial}{\partial{}x^{\mu}}f(y),\quad{}y\coloneqq{}\frac{x^{\mu}}{x^{2}}                                        \\
+		                   & =ix^{\mu}\frac{\partial{}y^{\nu}}{\partial{}x^{\mu}}\frac{\partial{}f(y)}{\partial{}y^{\nu}}                                    \\
+		                   & =ix^{\mu}\frac{1}{x^{2}}\left(\delta^{\nu}_{\ \mu}-\frac{2x^{\nu}x_{\mu}}{x^{2}}\right)\frac{\partial{}f(y)}{\partial{}y^{\nu}} \\
+		                   & =i\frac{1}{x^{2}}\left(x^{\nu}-\frac{2x^{2}x^{\nu}}{x^{2}}\right)\frac{\partial{}f(y)}{\partial{}y^{\nu}}                       \\
+		                   & =-i\frac{x^{\nu}}{x^{2}}\frac{\partial{}f(y)}{\partial{}y^{\nu}}=-iy^{\nu}\frac{\partial{}f(y)}{\partial{}y^{\nu}}
+	\end{align}
+	従って，
+	\begin{align}
+		\hat{I}\hat{D}\hat{I}f(x) & =-ix^{\nu}\frac{\partial{}f(x)}{\partial{}x^{\nu}} \\
+		                          & =-\hat{D}f(x).
+	\end{align}
+\end{proof}
+\section{特殊共形変換}
+\begin{defn}[特殊共形変換]
+	\begin{align}
+		\hat{K}_{\mu}\coloneqq{}\hat{I}\hat{P}_{\mu}\hat{I}
+	\end{align}
+	を特殊共形変換演算子として定義する．
+\end{defn}
+\begin{prop}
+	特殊共形変換演算子は
+	\begin{align}
+		\hat{K}_{\mu}=i\left(x^{2}\delta^{\nu}_{\ \mu}+2x^{\nu}x_{\mu}\right)\frac{\partial{}}{\partial{}x^{\nu}}
+	\end{align}
+	で表せる．
+\end{prop}
+\begin{proof}
+	まず，
+	\begin{align}
+		\hat{P}_{\mu}\hat{I}f(x) & =\hat{P}_{\mu}f(y),\quad{}y^{\mu}=\frac{x^{\mu}}{x^{2}}                                                                  \\
+		                         & =i\frac{\partial{}y^{\nu}}{\partial{}x^{\mu}}\frac{\partial{}f(y)}{\partial{}y^{\nu}}                                    \\
+		                         & =i\frac{1}{x^{2}}\left(\delta^{\nu}_{\ \mu}+\frac{2x^{\nu}x_{\mu}}{x^{2}}\right)\frac{\partial{}f(y)}{\partial{}y^{\nu}} \\
+		                         & =i\frac{1}{x^{2}}\left(\delta^{\nu}_{\ \mu}+2y^{\nu}x_{\mu}\right)\frac{\partial{}f(y)}{\partial{}y^{\nu}}
+	\end{align}
+	ここで，
+	\begin{align}
+		x^{2}=\frac{1}{y^{2}}
+	\end{align}
+	であることを用いると，
+	\begin{align}
+		\hat{P}_{\mu}\hat{I}f(x)=i\left(y^{2}\delta^{\nu}_{\ \mu}+2y^{\nu}y_{\mu}\right)\frac{\partial{}f(y)}{\partial{}y^{\nu}}.
+	\end{align}
+	従って，
+	\begin{align}
+		\hat{I}\hat{P}_{\mu}\hat{I}f(x)=i\left(x^{2}\delta^{\nu}_{\ \mu}+2x^{\nu}x_{\mu}\right)\frac{\partial{}}{\partial{}x^{\nu}}f(y)
+	\end{align}
+\end{proof}
+\section{共形変換代数}
+\begin{defn}[共形変換代数]
+	Poincar\'{e}代数\(\hat{M}_{\mu\nu}\)，\(\hat{P}_{\mu}\)，スケール演算子
+	\(\hat{D}\)，特殊共形変換演算子\(\hat{K}_{\mu}\)が成すLie代数を
+	共形変換代数という．これを\(\mathfrak{c}(3,1)\)で表す．
+\end{defn}
+\begin{prop}
+	\begin{align}
+		\mathfrak{c}(3,1)\simeq{}\mathfrak{so}(4,2)
+	\end{align}
+\end{prop}
+\begin{proof}
+	\(0\leq{}\mu,\nu\leq{}3\)として，
+	\begin{align}
+		M_{4\ -1}   & \coloneqq{}\hat{D},                                  \\
+		M_{\mu\ -1} & \coloneqq{}\frac{1}{2}(\hat{K}_{\mu}+\hat{P}_{\mu}), \\
+		M_{\mu\ 4}  & \coloneqq{}\frac{1}{2}(\hat{K}_{\mu}-\hat{P}_{\mu}).
+	\end{align}
+	として，計量
+	\begin{align}
+		\eta\coloneqq{}\begin{bmatrix}
+			-1 &                     \\
+			   & -1 &                \\
+			   &    & 1              \\
+			   &    &   & \ddots     \\
+			   &    &   &        & 1
+		\end{bmatrix}
+	\end{align}
+	を導入すると，
+	\begin{align}
+		[\hat{M}_{\mu\nu},\hat{M}_{\rho\sigma}]=i\eta_{\mu\rho}\hat{M}_{\nu\sigma}-i\eta_{\nu\rho}\hat{M}_{\mu\sigma}-i\eta_{\mu\sigma}\hat{M}_{\nu\rho}+i\eta_{\nu\sigma}\hat{M}_{\mu\rho}.
+	\end{align}
+\end{proof}
+\section{2次元の共形変換}

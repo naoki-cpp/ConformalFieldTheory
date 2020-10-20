@@ -1,0 +1,27 @@
+\chapter{2次元共形場理論}
+\section{2次元の共形変換}
+\(g_{\mu\nu}=\delta_{\mu\nu}\)である2次元ユークリッド空間の共形変換を考える．すると，
+\cref{eq::conformal-Killing-equation-2}より，
+\begin{align}
+	\partial_{\mu}\varepsilon_{\nu}(x)+\partial_{\nu}\varepsilon_{\mu}(x)=\frac{2}{d}\delta_{\mu\nu}\partial_{\rho}\varepsilon^{\rho}(x).
+\end{align}
+これは，
+\begin{align}
+	\frac{\partial{}\varepsilon_{1}(x)}{\partial{}x^{0}}+\frac{\partial{}\varepsilon_{0}(x)}{\partial{}x^{1}} & =0,                                                                                                         \\
+	\frac{\partial{}\varepsilon_{1}(x)}{\partial{}x^{1}}+\frac{\partial{}\varepsilon_{1}(x)}{\partial{}x^{1}} & =\frac{\partial{}\varepsilon_{0}(x)}{\partial{}x^{0}}+\frac{\partial{}\varepsilon_{1}(x)}{\partial{}x^{1}}, \\
+	\frac{\partial{}\varepsilon_{0}(x)}{\partial{}x^{0}}+\frac{\partial{}\varepsilon_{0}(x)}{\partial{}x^{0}} & =\frac{\partial{}\varepsilon_{0}(x)}{\partial{}x^{0}}+\frac{\partial{}\varepsilon_{1}(x)}{\partial{}x^{1}}.
+\end{align}
+と同値である．これを整理すると，Cauchy--Riemann関係式
+\begin{align}
+	\frac{\partial{}\varepsilon_{1}(x)}{\partial{}x^{0}}+\frac{\partial{}\varepsilon_{0}(x)}{\partial{}x^{1}} & =0, \\
+	\frac{\partial{}\varepsilon_{0}(x)}{\partial{}x^{0}}-\frac{\partial{}\varepsilon_{1}(x)}{\partial{}x^{1}} & =0.
+\end{align}
+に帰着する．従って，複素座標\(z\coloneqq{}x_{0}+ix_{1}\)と複素数場
+\begin{align}
+	\varepsilon(z)\coloneqq{}\varepsilon_{0}(z)+i\varepsilon_{1}(z)
+\end{align}
+を導入すると，共形Killing方程式は
+\begin{align}
+	\frac{\partial\varepsilon(z)}{\partial{}z}=0
+\end{align}
+と同値．
